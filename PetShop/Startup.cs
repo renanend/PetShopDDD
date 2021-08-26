@@ -5,7 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Petshop.Application.Services;
+using Petshop.Domain.Interfaces.Repositories;
+using Petshop.Domain.Interfaces.Services;
 using Petshop.Infra.Context;
+using Petshop.Infra.Repositories;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,6 +37,8 @@ namespace PetShop
             services.AddControllersWithViews();
             services.AddDbContext<ContextPetShop>(opt => opt.UseSqlServer(Configuration.GetConnectionString("PetShop")));
             services.AddScoped<DbContext, ContextPetShop>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IClienteService, ClienteService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\Petshop.Domain\Petshop.Domain.csproj" />
+    <ProjectReference Include="..\Petshop.Infra\Petshop.Infra.csproj" />
   </ItemGroup>
 
 </Project>
