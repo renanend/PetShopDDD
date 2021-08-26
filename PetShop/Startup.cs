@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Petshop.Application.Services;
+using Petshop.Domain.Entities;
 using Petshop.Domain.Interfaces.Repositories;
 using Petshop.Domain.Interfaces.Services;
 using Petshop.Infra.Context;
@@ -39,6 +40,7 @@ namespace PetShop
             services.AddScoped<DbContext, ContextPetShop>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteService, ClienteService>();
+            services.AddScoped<IRepositoryBase<Cliente>, RepositoryBase<Cliente>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
