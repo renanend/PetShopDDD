@@ -42,15 +42,15 @@ namespace Petshop.Application.Services
         }
 
         public Cliente ObterClientePorId(int id)
-        {
-            return _clienteRepository.GetClienteBy(id);
+        { 
+            return _clienteRepositoryBase.GetById(id);
         }
 
         public void RemoveCliente(int id)
         {
             var clienteExiste = _clienteRepositoryBase.GetById(id);
             _clienteRepositoryBase.Remove(clienteExiste);
-            _clienteRepository.UnitOfWork().Commit();
+            _clienteRepositoryBase.UnitOfWork().Commit();
         }
     }
 }
