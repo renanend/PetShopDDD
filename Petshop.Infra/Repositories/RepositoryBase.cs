@@ -34,7 +34,11 @@ namespace Petshop.Infra.Repositories
 
         public TEntity GetById(int id)
         {
-           return _db.Set<TEntity>().Find(id);
+            return _db.Set<TEntity>().Find(id);
+        }
+        public void Remove(TEntity entity)
+        {
+            _db.Remove(entity);
         }
     }
 }

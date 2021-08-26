@@ -12,5 +12,6 @@ namespace Petshop.Domain.Interfaces.Repositories
         void Add(TEntity entity);
         TEntity GetById(int id);
         IUnitOfWork UnitOfWork();
+        void Remove(TEntity entity);
     }
 }

@@ -48,8 +48,8 @@ namespace Petshop.Application.Services
 
         public void RemoveCliente(int id)
         {
-            var clienteExiste = _clienteRepository.GetClienteBy(id);
-            _clienteRepository.RemoveCliente(clienteExiste);
+            var clienteExiste = _clienteRepositoryBase.GetById(id);
+            _clienteRepositoryBase.Remove(clienteExiste);
             _clienteRepository.UnitOfWork().Commit();
         }
     }
