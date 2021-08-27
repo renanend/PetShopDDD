@@ -17,6 +17,7 @@ namespace Petshop.Infra.Repositories
         {
             _db = db;
         }
+
         public IUnitOfWork UnitOfWork()
         {
             return _db;
@@ -36,9 +37,15 @@ namespace Petshop.Infra.Repositories
         {
             return _db.Set<TEntity>().Find(id);
         }
+
         public void Remove(TEntity entity)
         {
             _db.Remove(entity);
+        }
+
+        public List<TEntity> GetAll()
+        {
+            return _db.Set<TEntity>().ToList();
         }
     }
 }

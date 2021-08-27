@@ -38,7 +38,7 @@ namespace Petshop.Application.Services
 
         public List<Cliente> GetClientes()
         {
-            return _clienteRepository.GetClientes();
+            return _clienteRepositoryBase.GetAll();
         }
 
         public Cliente ObterClientePorId(int id)

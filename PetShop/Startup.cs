@@ -41,6 +41,7 @@ namespace PetShop
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<IRepositoryBase<Cliente>, RepositoryBase<Cliente>>();
+            services.AddMvc().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
